@@ -1,16 +1,20 @@
 import React from 'react'
 import { Paper, Typography, styled } from '@material-ui/core'
 import AspectWrapper from '../AspectWrapper'
+import { PostPreview } from '../../types/types'
 
 interface Props {
-    post: any
+    post: PostPreview
 }
 
 const ImagePaper=styled(Paper)({
-    overflow: "hidden"
+    overflow: "hidden",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between"
 })
 
-const PostPreview = ({post}: Props) => {
+const PostThumbnail = ({post}: Props) => {
     return (
         <ImagePaper>
             <AspectWrapper aspectRatio={0.56}>
@@ -20,17 +24,17 @@ const PostPreview = ({post}: Props) => {
                         height: "100%", 
                         objectFit: "cover"
                     }} 
-                    src={post.download_url} 
+                    src={`http://localhost:5600/static/${post.resourceName}`} 
                     alt="post"
                     loading="lazy"
                 />
             </AspectWrapper>
             
             <Typography>
-                {post.author}
+                {post.title}
             </Typography>
         </ImagePaper>
     )
 }
 
-export default PostPreview
+export default PostThumbnail

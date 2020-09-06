@@ -1,14 +1,14 @@
 import React from 'react';
 import { NextPage } from 'next'
 import Container from '@material-ui/core/Container';
-import Link from '../src/Link';
 import Layout from '../src/Layout';
 import PostsGrid from '../src/preview/PostsGrid';
+import { PostPreview } from '../types/types';
 
 
 
 interface Props {
-  initialPosts: any[]
+  initialPosts: PostPreview[]
 }
 
 const Index: NextPage<Props>=({initialPosts=[]})=> {
@@ -23,12 +23,12 @@ const Index: NextPage<Props>=({initialPosts=[]})=> {
   );
 }
 
-Index.getInitialProps = async (ctx) =>{
+Index.getInitialProps = async (_ctx) =>{
   try {
     const res=await fetch(
-      `https://picsum.photos/v2/list?page=2&limit=40`
+      `http://localhost:5600/posts`
     );
-    const initialPosts=await res.json();
+    const initialPosts=await res.json() || [];
     return {initialPosts}
   } catch (error) {
     return {initialPosts: []}

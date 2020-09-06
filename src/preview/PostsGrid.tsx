@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled, Box } from '@material-ui/core'
-import PostPreview from './PostPreview'
+import PostThumbnail from './PostPreview'
 
 
 
@@ -20,7 +20,7 @@ interface Props {
 const PostsGrid = ({posts=[]}: Props) => {
     return (
         <AutoGrid>
-          {posts.map(item=><PostPreview post={item}/>)}
+          {posts.map(item=><PostThumbnail post={item}/>)}
         </AutoGrid>
     )
 }
