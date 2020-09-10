@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography } from '@material-ui/core'
+import { Box, Typography, AppBar, Toolbar, Container } from '@material-ui/core'
 import Link from './Link'
 
 interface Props {
@@ -8,20 +8,22 @@ interface Props {
 
 const Header = (props: Props) => {
     return (
-        <header>
-            <nav>
-                <Box>
-                    <Typography>
-                        working
-                    </Typography>
-                </Box>
-                <ul>
-                    <Link href="create">
-                        create
+        <AppBar position="static">
+            <Container>
+                <Toolbar variant="dense">
+                    
+                    <Link href="/" color="inherit">
+                        home
                     </Link>
-                </ul>
-            </nav>
-        </header>
+                    <ul>
+                        <Link color="inherit" href="create">
+                            create
+                        </Link>
+                    </ul>
+                </Toolbar> 
+            </Container>
+        </AppBar>
+        
     )
 }
 

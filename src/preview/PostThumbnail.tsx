@@ -1,23 +1,18 @@
 import React from 'react'
-import { Paper, Typography, styled } from '@material-ui/core'
+import { Paper, Typography, styled, Box } from '@material-ui/core'
 import AspectWrapper from '../AspectWrapper'
 import { PostPreview } from '../../types/types'
+import Link from '../Link'
 
 interface Props {
     post: PostPreview
 }
 
-const ImagePaper=styled(Paper)({
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between"
-})
 
 
 const PostThumbnail = ({post}: Props) => {
     return (
-        <ImagePaper>
+        <Link href={`posts/${post.id}`}>
             <AspectWrapper aspectRatio={0.56}>
                 <img
                     style={{
@@ -30,11 +25,9 @@ const PostThumbnail = ({post}: Props) => {
                     loading="lazy"
                 />
             </AspectWrapper>
-            
-            <Typography>
-                {post.title}
-            </Typography>
-        </ImagePaper>
+        </Link>
+        
+    
     )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next'
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import Layout from '../src/Layout';
 import PostsGrid from '../src/preview/PostsGrid';
 import { PostPreview } from '../types/types';
@@ -15,9 +16,11 @@ const Index: NextPage<Props>=({initialPosts=[]})=> {
 
   return (
     <Layout appTitle="hey">
-      <Container>
-        <PostsGrid posts={initialPosts}/>
-      </Container>
+      <Box  paddingY={0.5}>
+        <Container>
+          <PostsGrid posts={initialPosts}/>
+        </Container>
+      </Box>
     </Layout>
 
   );

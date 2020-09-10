@@ -1,13 +1,13 @@
 import React from 'react'
 import { styled, Box } from '@material-ui/core'
-import PostThumbnail from './PostPreview'
+import PostThumbnail from './PostThumbnail'
 
 
 
 const AutoGrid=styled(Box)(({theme})=>({
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill, minmax(18rem, 1fr))",
-    gridGap: theme.spacing(1)
+    gridGap: theme.spacing(0.2)
 }))
   
   
