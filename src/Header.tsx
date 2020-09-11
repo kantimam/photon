@@ -8,7 +8,7 @@ interface Props {
 
 const Header = (props: Props) => {
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Container>
                 <Toolbar variant="dense">
                     

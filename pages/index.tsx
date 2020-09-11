@@ -16,7 +16,7 @@ const Index: NextPage<Props>=({initialPosts=[]})=> {
 
   return (
     <Layout appTitle="hey">
-      <Box  paddingY={0.5}>
+      <Box  paddingY={3.5}>
         <Container>
           <PostsGrid posts={initialPosts}/>
         </Container>

@@ -1,13 +1,20 @@
 import React from 'react'
-import { NextPage, GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
+import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import Layout from '../../src/Layout'
 import Box from '@material-ui/core/Box'
 import { PostPreview } from '../../types/types'
+import { Container, Typography, styled } from '@material-ui/core'
 
 
 interface Props {
     post: PostPreview | null
 }
+
+const PostFlexContainer=styled(Container)({
+    display: "flex",
+    justifyContent: "center",
+    position: "relative"
+})
 
 const Post:NextPage<Props>=({post})=> {
     if(!post) return <Box>
@@ -15,9 +22,32 @@ const Post:NextPage<Props>=({post})=> {
     </Box>
     return (
         <Layout>
-            <Box>
-                {post.title}
-                <strong>{post.id}</strong>
+            <Box paddingTop={6}>
+                <PostFlexContainer>
+                    <Box width={"4rem"}>
+                        <Box 
+                            top={"50%"} 
+                            component="aside" 
+                            position="sticky"
+                            borderRadius={2}
+                            bgcolor={"red"}
+                        >
+                            <Typography>
+                                test
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box flex={1}>
+                        <Typography variant="h2">
+                            {post.title}
+                        </Typography>
+                        <img src={`http://localhost:5600/static/${post.resourceName}`} alt="post image"/>
+                    </Box>
+                    
+                </PostFlexContainer>
+                <Box minHeight="200vh">
+                    asd
+                </Box>
             </Box>
         </Layout>
     )
