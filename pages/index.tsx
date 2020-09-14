@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Layout from '../src/Layout';
-import PostsGrid from '../src/preview/PostsGrid';
+import PostsMasonryGrid from '../src/preview/PostsMasonryGrid';
 import { PostPreview } from '../types/types';
 
 
@@ -12,13 +12,13 @@ interface Props {
   initialPosts: PostPreview[]
 }
 
-const Index: NextPage<Props>=({initialPosts=[]})=> {
+const Index: NextPage<Props> = ({ initialPosts = [] }) => {
 
   return (
     <Layout appTitle="hey">
-      <Box  paddingY={3.5}>
+      <Box paddingY={3.5}>
         <Container>
-          <PostsGrid posts={initialPosts}/>
+          <PostsMasonryGrid posts={initialPosts} />
         </Container>
       </Box>
     </Layout>
@@ -26,17 +26,17 @@ const Index: NextPage<Props>=({initialPosts=[]})=> {
   );
 }
 
-Index.getInitialProps = async (_ctx) =>{
+Index.getInitialProps = async (_ctx) => {
   try {
-    const res=await fetch(
+    const res = await fetch(
       `http://localhost:5600/posts`
     );
-    const initialPosts=await res.json() || [];
-    return {initialPosts}
+    const initialPosts = await res.json() || [];
+    return { initialPosts }
   } catch (error) {
-    return {initialPosts: []}
+    return { initialPosts: [] }
   }
-  
+
 }
 
 

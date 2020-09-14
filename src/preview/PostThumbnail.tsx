@@ -1,6 +1,4 @@
 import React from 'react'
-import { Paper, Typography, styled, Box } from '@material-ui/core'
-import AspectWrapper from '../AspectWrapper'
 import { PostPreview } from '../../types/types'
 import Link from '../Link'
 
@@ -10,24 +8,22 @@ interface Props {
 
 
 
-const PostThumbnail = ({post}: Props) => {
+const PostThumbnail = ({ post }: Props) => {
     return (
         <Link href={`posts/${post.id}`}>
-            <AspectWrapper aspectRatio={0.56}>
-                <img
-                    style={{
-                        width: "100%", 
-                        height: "100%", 
-                        objectFit: "cover"
-                    }} 
-                    src={`http://localhost:5600/static/${post.resourceName}`} 
-                    alt="post"
-                    loading="lazy"
-                />
-            </AspectWrapper>
+            <img
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                }}
+                src={`http://localhost:5600/static/${post.resourceName}`}
+                alt="post"
+                loading="lazy"
+            />
         </Link>
-        
-    
+
+
     )
 }
 
