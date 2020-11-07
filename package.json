@@ -8,7 +8,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-masonry-css": "^1.0.14"
+    "react-masonry-component": "^6.2.1"
   },
   "scripts": {
     "dev": "next",

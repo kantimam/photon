@@ -1,5 +1,4 @@
 import React from 'react'
-import { Paper, Typography, styled, Box } from '@material-ui/core'
 import AspectWrapper from '../AspectWrapper'
 import { PostPreview } from '../../types/types'
 import Link from '../Link'
