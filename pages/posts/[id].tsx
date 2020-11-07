@@ -3,7 +3,7 @@ import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import Layout from '../../src/Layout'
 import Box from '@material-ui/core/Box'
 import { PostPreview } from '../../types/types'
-import { Container, Typography, styled } from '@material-ui/core'
+import { Container, Typography, styled, Card } from '@material-ui/core'
 
 
 interface Props {
@@ -24,26 +24,56 @@ const Post: NextPage<Props> = ({ post }) => {
         <Layout>
             <Box paddingTop={6}>
                 <PostFlexContainer>
-                    <Box width={"4rem"}>
+                    <Box width={"4rem"} paddingRight="8px"
+                    >
                         <Box
-                            top={"10rem"}
+                            top={"20rem"}
                             component="aside"
                             position="sticky"
                             borderRadius={2}
-                            bgcolor={"red"}
                         >
-                            <Typography>
-                                test
-                            </Typography>
+                            <Card>
+                                <Typography>
+                                    test
+                                </Typography>
+                                <Typography>
+                                    test
+                                </Typography>
+                                <Typography>
+                                    test
+                                </Typography>
+                            </Card>
+                            <Card>
+                                <Typography>
+                                    test
+                                </Typography>
+                                <Typography>
+                                    test
+                                </Typography>
+                                <Typography>
+                                    test
+                                </Typography>
+                            </Card>
                         </Box>
                     </Box>
                     <Box flex={1}>
+                        {/* main content */}
                         <Typography variant="h2">
                             {post.title}
                         </Typography>
-                        <img src={`http://localhost:5600/static/${post.resourceName}`} alt="post image" />
-                    </Box>
+                        <Box position="relative">
+                            {/* put sticky container here */}
+                            <img src={`http://localhost:5600/static/${post.resourceName}`} style={{ width: "100%" }} alt="post image" />
 
+                        </Box>
+                        {/* comments here */}
+                    </Box>
+                    <Card style={{ width: "12rem", marginLeft: "1rem" }}>
+                        {/* sticky sidebar */}
+                        <Typography>
+                            asd
+                        </Typography>
+                    </Card>
                 </PostFlexContainer>
                 <Box minHeight="200vh">
                     asd

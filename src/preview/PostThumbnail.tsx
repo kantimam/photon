@@ -9,9 +9,10 @@ interface Props {
 
 const ThumbnailLink = styled(Link)({
     display: "block",
+    width: "100%",
     "& img": {
         width: "100%",
-        height: "100%",
+        /* height: "100%", */
         objectFit: "cover",
         display: "block"
     }
