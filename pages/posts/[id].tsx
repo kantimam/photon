@@ -22,7 +22,7 @@ const Post: NextPage<Props> = ({ post }) => {
     </Box>
     return (
         <Layout>
-            <Box paddingTop={6}>
+            <Box>
                 <PostFlexContainer>
                     <Box width={"4rem"} paddingRight="8px"
                     >

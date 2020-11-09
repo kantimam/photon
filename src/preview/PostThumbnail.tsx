@@ -7,21 +7,30 @@ interface Props {
     post: PostPreview
 }
 
-const ThumbnailLink = styled(Link)({
+const ThumbnailLink = styled(Link)(({ theme }) => ({
     display: "block",
     width: "100%",
-    "& img": {
-        width: "100%",
-        /* height: "100%", */
-        objectFit: "cover",
-        display: "block"
+    overflow: "hidden",
+    borderRadius: theme.spacing(1)
+}))
+
+const ThumbnailImage = styled('img')(({ theme }) => ({
+    width: "100%",
+    objectFit: "cover",
+    display: "block",
+    overflow: "hidden",
+    borderRadius: theme.spacing(1),
+    transition: "0.2s transform",
+    "&:hover": {
+        transform: "scale(1.04)"
     }
-})
+
+}))
 
 const PostThumbnail = ({ post }: Props) => {
     return (
         <ThumbnailLink href={`posts/${post.id}`}>
-            <img
+            <ThumbnailImage
                 src={`http://localhost:5600/static/${post.resourceName}`}
                 alt="post"
                 loading="lazy"
