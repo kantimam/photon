@@ -8,7 +8,7 @@ import PostThumbnail from './PostThumbnail'
 const MasonryBox = styled(Box)(({ theme }) => ({
     columnCount: 4,
     columnGap: theme.spacing(0.5),
-    "& a": {
+    "&>a": {
         marginBottom: theme.spacing(0.5)
     }
 }))

@@ -4,9 +4,10 @@ import Link from './Link'
 
 interface Props {
     variant?: "dense" | "regular" | undefined;
+    openCreatePost(): void;
 }
 
-const Header = ({ variant = "dense" }: Props) => {
+const Header = ({ variant = "dense", openCreatePost }: Props) => {
 
     return (
         <>
@@ -16,11 +17,11 @@ const Header = ({ variant = "dense" }: Props) => {
 
                         <Link href="/" color="inherit">
                             home
-                    </Link>
-                        <ul>
-                            <Link color="inherit" href="create">
-                                create
                         </Link>
+                        <ul>
+                            <Typography style={{ cursor: "pointer" }} onClick={openCreatePost}>
+                                create
+                            </Typography>
                         </ul>
                     </Toolbar>
                 </Container>
