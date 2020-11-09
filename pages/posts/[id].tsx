@@ -4,6 +4,7 @@ import Layout from '../../src/Layout'
 import Box from '@material-ui/core/Box'
 import { PostPreview } from '../../types/types'
 import { Container, Typography, styled, Card } from '@material-ui/core'
+import PreviewFeed from '../../src/post/PreviewFeed'
 
 
 interface Props {
@@ -68,12 +69,7 @@ const Post: NextPage<Props> = ({ post }) => {
                         </Box>
                         {/* comments here */}
                     </Box>
-                    <Card style={{ width: "12rem", marginLeft: "1rem" }}>
-                        {/* sticky sidebar */}
-                        <Typography>
-                            asd
-                        </Typography>
-                    </Card>
+                    <PreviewFeed />
                 </PostFlexContainer>
                 <Box minHeight="200vh">
                     asd

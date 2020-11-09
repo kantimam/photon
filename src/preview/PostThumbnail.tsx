@@ -30,7 +30,7 @@ const styles = makeStyles(theme => ({
 const PostThumbnail = ({ post }: Props) => {
     const { thumbnailLink, thumbnailImg } = styles()
     return (
-        <Link className={thumbnailLink} href={`posts/${post.id}`}>
+        <Link className={thumbnailLink} href={'posts/[id]'} as={`posts/${post.id}`}>
             <img
                 className={thumbnailImg}
                 src={`http://localhost:5600/static/${post.resourceName}`}

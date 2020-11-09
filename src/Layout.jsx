@@ -5,9 +5,9 @@ import CreatePostDialog from "./CreatePostDialog";
 import Header from "./Header";
 
 
+
 const Layout = ({ appTitle = 'photon', children }) => {
   const [createOpen, setOpen] = useState(false);
-
   return (
     <div className="Layout">
       <Head>
