@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import Layout from '../../src/Layout'
 import Box from '@material-ui/core/Box'
@@ -69,7 +69,7 @@ const Post: NextPage<Props> = ({ post }) => {
                         </Box>
                         {/* comments here */}
                     </Box>
-                    <PreviewFeed />
+                    <PreviewFeed currentPost={post} />
                 </PostFlexContainer>
                 <Box minHeight="200vh">
                     asd

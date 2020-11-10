@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-const useFetch = (input: RequestInfo, init?: RequestInit | undefined) => {
-    const [data, setData] = useState<any>()
+function useFetch<T>(input: RequestInfo, init?: RequestInit | undefined): [T | undefined, boolean, Error | undefined] {
+    const [data, setData] = useState<T>()
     const [error, setError] = useState<Error>()
     useEffect(() => {
         fetch(input, init)

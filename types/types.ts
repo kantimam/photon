@@ -13,3 +13,11 @@ export interface PostPreview {
     title: string
     resourceName: string
 }
+
+
+export interface Post {
+    id: string
+    author: string
+    title: string
+    resourceName: string
+}
