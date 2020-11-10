@@ -2,6 +2,7 @@ import { styled, makeStyles } from '@material-ui/core'
 import React from 'react'
 import { PostPreview } from '../../types/types'
 import Link from '../Link'
+import ThumbnailImg from '../ThumbnailImage'
 
 interface Props {
     post: PostPreview
@@ -28,15 +29,10 @@ const styles = makeStyles(theme => ({
 }))
 
 const PostThumbnail = ({ post }: Props) => {
-    const { thumbnailLink, thumbnailImg } = styles()
+    const { thumbnailLink } = styles()
     return (
         <Link className={thumbnailLink} /* href={'/posts/[id]'} */ href={`/posts/${post.id}`} as={`/posts/${post.id}`}>
-            <img
-                className={thumbnailImg}
-                src={`http://localhost:5600/static/${post.resourceName}`}
-                alt="post"
-                loading="lazy"
-            />
+            <ThumbnailImg imgSrc={post.resourceName} />
         </Link>
 
 

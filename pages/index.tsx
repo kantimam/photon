@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Layout from '../src/Layout';
@@ -26,19 +26,22 @@ const Index: NextPage<Props> = ({ initialPosts = [] }) => {
   );
 }
 
-Index.getInitialProps = async (_ctx) => {
+
+// This also gets called at build time
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+  //if(!context.params || typeof context.params.id==="undefined") return {props: {post: }}
   try {
     const res = await fetch(
       `http://localhost:5600/posts`
     );
     const initialPosts = await res.json() || [];
-    return { initialPosts }
+    return { props: { initialPosts } }
   } catch (error) {
-    return { initialPosts: [] }
+    return { props: { initialPosts: [] } }
   }
-
 }
-
 
 
 export default Index

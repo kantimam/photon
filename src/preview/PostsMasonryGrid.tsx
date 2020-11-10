@@ -22,7 +22,7 @@ interface Props {
 const PostsMasonryGrid = ({ posts = [] }: Props) => {
     return (
         <MasonryBox>
-            {posts.map(item => <PostThumbnail post={item} />)}
+            {posts.map(item => <PostThumbnail key={`${Date.now()}_${item.id}`} post={item} />)}
         </MasonryBox>
     )
 }

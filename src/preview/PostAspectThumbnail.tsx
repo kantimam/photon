@@ -2,6 +2,7 @@ import React from 'react'
 import AspectWrapper from '../AspectWrapper'
 import { PostPreview } from '../../types/types'
 import Link from '../Link'
+import ThumbnailImg from '../ThumbnailImage'
 
 interface Props {
     post: PostPreview
@@ -11,18 +12,9 @@ interface Props {
 
 const PostThumbnail = ({ post }: Props) => {
     return (
-        <Link href={`posts/${post.id}`}>
+        <Link href={`/posts/${post.id}`} as={`/posts/${post.id}`}>
             <AspectWrapper aspectRatio={0.56}>
-                <img
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover"
-                    }}
-                    src={`http://localhost:5600/static/${post.resourceName}`}
-                    alt="post"
-                    loading="lazy"
-                />
+                <ThumbnailImg imgSrc={post.resourceName} />
             </AspectWrapper>
         </Link>
 
