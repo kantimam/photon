@@ -28,7 +28,7 @@ const Index: NextPage<Props> = ({ initialPosts = [] }) => {
 
 
 // This also gets called at build time
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
   //if(!context.params || typeof context.params.id==="undefined") return {props: {post: }}
