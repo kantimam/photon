@@ -1,4 +1,4 @@
-import { styled, makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import { PostPreview } from '../../types/types'
 import Link from '../Link'

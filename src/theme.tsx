@@ -1,5 +1,4 @@
-import { createMuiTheme, ThemeOptions, Theme } from '@material-ui/core/styles';
-import { doesNotReject } from 'assert';
+import { createMuiTheme, Theme } from '@material-ui/core/styles';
 
 declare module '@material-ui/core/styles/createMuiTheme' {
   interface Theme {

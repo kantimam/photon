@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { NextPage, GetStaticPaths, GetStaticProps, GetServerSideProps } from 'next'
+import React from 'react'
+import { GetServerSideProps } from 'next'
 import Layout from '../../src/Layout'
 import Box from '@material-ui/core/Box'
 import { PostPreview } from '../../types/types'

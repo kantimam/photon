@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, AppBar, Toolbar, Container } from '@material-ui/core'
+import { Typography, AppBar, Toolbar, Container } from '@material-ui/core'
 import Link from './Link'
 
 interface Props {
