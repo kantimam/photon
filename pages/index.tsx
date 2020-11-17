@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import Layout from '../src/Layout';
 import PostsMasonryGrid from '../src/preview/PostsMasonryGrid';
 import { PostPreview } from '../types/types';
+import PostDialog from '../src/post/postDialog/PostDialog';
 
 
 
@@ -20,6 +21,7 @@ const Index: NextPage<Props> = ({ initialPosts = [] }) => {
         <Container>
           <PostsMasonryGrid posts={initialPosts} />
         </Container>
+        <PostDialog />
       </Box>
     </Layout>
 
